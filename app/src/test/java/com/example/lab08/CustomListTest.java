@@ -13,7 +13,7 @@ public class CustomListTest {
 
         @BeforeEach
         public void createList() {
-            list = new CustomList(null, new ArrayList<>());
+            list = new CustomList();
         }
 
         @Test
