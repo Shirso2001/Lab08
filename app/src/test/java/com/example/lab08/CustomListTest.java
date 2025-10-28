@@ -31,5 +31,23 @@ public class CustomListTest {
             Assert.assertFalse(list.hasCity(otherCity)); // Asserts that the supplied condition is false. [1, 2]
         }
 
+        @Test
+        public void deleteCityTest() {
+            City city = new City("Calgary", "AB");
+            list.addCity(city);
+            assertTrue(list.hasCity(city));
+            list.deleteCity(city);
+            assertFalse(list.hasCity(city));
+        }
+
+        @Test
+        public void countCitiesTest() {
+            Assert.assertEquals(0, list.countCities());
+            list.addCity(new City("Edmonton", "AB"));
+            Assert.assertEquals(1, list.countCities());
+            list.addCity(new City("Vancouver", "BC"));
+            Assert.assertEquals(2, list.countCities());
+        }
+
 
 }
